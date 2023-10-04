@@ -20,7 +20,10 @@ export default async function TicketDetails({ params }) {
       <div className="card">
         <h3>{ticket.title}</h3>
         <small>Created by {ticket.user_email}</small>
-        <p className={`pill ${ticket.priority}`}>{ticket.priority} priority</p>
+        <p>{ticket.body}</p>
+        <div className={`pill ${ticket.priority}`}>
+          {ticket.priority} Priority
+        </div>
       </div>
     </main>
   );
