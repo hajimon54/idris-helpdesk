@@ -15,6 +15,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 async function getTicket(id) {
+  //Imitate delay
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const res = await fetch("http://localhost:4000/tickets/" + id, {
     //This next function will return the revalidated tickets from the server
     next: {
