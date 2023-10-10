@@ -1,6 +1,8 @@
 import TicketList from "./TicketList";
 import { Suspense } from "react";
 import Loading from "../loading";
+import Link from "next/link";
+import CreateTicket from "./create/page";
 
 export default function Tickets() {
   return (
@@ -17,6 +19,12 @@ export default function Tickets() {
       <Suspense fallback={<Loading />}>
         <TicketList />
       </Suspense>
+
+      <div className="flex justify-center my-8">
+        <Link href="../tickets/create">
+          <button className="btn-primary">Create a new ticket</button>
+        </Link>
+      </div>
     </main>
   );
 }
