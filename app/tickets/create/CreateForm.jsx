@@ -24,10 +24,11 @@ export default function CreateForm() {
     const res = await fetch("http://localhost:4000/tickets", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify,
+      body: JSON.stringify(ticket),
     });
 
     if (res.status === 201) {
+      router.refresh();
       router.push("/tickets");
     }
   };
