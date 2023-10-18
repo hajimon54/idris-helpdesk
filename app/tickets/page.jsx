@@ -2,7 +2,6 @@ import TicketList from "./TicketList";
 import { Suspense } from "react";
 import Loading from "../loading";
 import Link from "next/link";
-import CreateTicket from "./create/page";
 
 export default function Tickets() {
   return (
@@ -11,7 +10,7 @@ export default function Tickets() {
         <div>
           <h2>Tickets</h2>
           <p>
-            <small>Currently open tickets.</small>
+            <small>Tickets that are currently open.</small>
           </p>
         </div>
       </nav>

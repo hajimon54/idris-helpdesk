@@ -12,7 +12,6 @@ export default function Home() {
         voluptates iste cum totam, facere explicabo, fugit suscipit ratione
         aspernatur consequuntur ex mollitia quaerat?
       </p>
-
       <div className="flex justify-center my-8">
         <Link href="/tickets">
           <button className="btn-primary">View Tickets</button>
@@ -20,7 +19,6 @@ export default function Home() {
       </div>
 
       <h2>Company Updates</h2>
-
       <div className="card">
         <h3>New member of the web dev team...</h3>
         <p>
