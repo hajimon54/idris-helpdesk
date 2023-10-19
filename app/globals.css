@@ -136,3 +136,7 @@ form button {
   @apply absolute bottom-0 right-0 
       rounded-tl-md;
 }
+
+.hidden {
+  display: none;
+}

@@ -1,20 +1,13 @@
 "use client";
 import { useState } from "react";
+import { ModalContext } from "app/components/context/ModalContext.jsx";
 
-export default function Example() {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
+export default function Modal() {
+  const { isModalOpen } = useContext(ModalContext);
   return (
     <div
       id="authentication-modal"
-      className={
-        isModalOpen
-          ? "fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-          : "fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-      }
+      /* ...other props */ className={isModalOpen ? "modal open" : "modal"}
     >
       <div class="relative w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
