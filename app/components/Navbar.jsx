@@ -2,10 +2,10 @@
 import React, { useState, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ModalContext } from "app/context/ModalContext.jsx";
+// import { ModalContext } from "app/context/ModalContext.jsx";
 
 export default function Navbar() {
-  const { toggleModal } = useContext(ModalContext);
+  // const { toggleModal } = useContext(ModalContext);
 
   return (
     <nav>
@@ -20,7 +20,7 @@ export default function Navbar() {
       <h1> Idris Helpdesk</h1>
       <Link href="/">Dashboard</Link>
       <Link href="/tickets">Tickets</Link>
-      <button onClick={toggleModal}>Toggle modal</button>
+      {/* <button onClick={toggleModal}>Toggle modal</button> */}
     </nav>
   );
 }
