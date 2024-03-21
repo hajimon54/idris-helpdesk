@@ -11,7 +11,6 @@ export async function generateStaticParams() {
   }));
 }
 
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 async function getTicket(id) {
@@ -32,9 +31,12 @@ async function getTicket(id) {
   return res.json();
 }
 
-export default async function TicketDetails({ params }) {
+export default async function TicketDetails({ params, onDelete }) {
   const ticket = await getTicket(params.id);
-  //console.log(ticket);
+
+  if (!ticket) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <main>

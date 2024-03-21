@@ -36,7 +36,7 @@ export default function CreateForm() {
   return (
     <form onSubmit={handleSubmit} className="w-1/2">
       <label>
-        <span>Title:</span>
+        <span>Ticket Title:</span>
         <input
           required
           type="text"
@@ -45,7 +45,7 @@ export default function CreateForm() {
         />
       </label>
       <label>
-        <span>Title:</span>
+        <span>Ticket Description:</span>
         <textarea
           required
           onChange={(e) => setBody(e.target.value)}

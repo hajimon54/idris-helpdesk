@@ -28,8 +28,31 @@ export default async function TicketList() {
           <div className={`pill ${ticket.priority}`}>
             {ticket.priority} priority
           </div>
+          {/* <a
+            href={`/api/tickets/delete?ticketId=${ticket.id}`}
+            onClick={(e) => handleDelete(ticket.id, e)}
+          >
+            Delete Ticket
+          </a> */}
         </div>
       ))}
     </>
   );
 }
+
+async function handleDelete(ticketId) {
+  event.preventDefault(); // Prevent the link from navigating
+  const res = await fetch(`/api/tickets/${ticketId}`, {
+    method: "DELETE",
+  });
+  if (res.ok) {
+    // Optionally refresh the page or use client-side logic to remove the item from the DOM
+    window.location.reload();
+  }
+}
+
+// Fetch tickets server-side (for demonstration)
+TicketList.getInitialProps = async () => {
+  const tickets = await getTickets();
+  return { tickets };
+};
